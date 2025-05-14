@@ -9,7 +9,7 @@ const Success = () => {
         <h1>Reservation Confirmed! 🎉</h1>
         <p>
           Thank you for choosing SmartDine!
-          We’ve received your reservation and look forward to serving you!
+          We've received your reservation and look forward to serving you!
         </p>
         <Link to="/home" className="success-btn">Back to Home</Link>
       </div>

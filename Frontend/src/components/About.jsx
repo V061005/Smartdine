@@ -23,8 +23,6 @@ Effortless Reservations - Book your table with ease, anytime, anywhere.
 
 Seamless Ordering - Browse menus, place orders, and enjoy a hassle-free experience.
 
-Personalized Recommendations - Discover new dining options tailored to your preferences.
-
 Exclusive Offers - Access special promotions and loyalty rewards.
 
 With Smart Dine, dining is no longer just a necessity—it's an experience.
@@ -32,12 +30,13 @@ With Smart Dine, dining is no longer just a necessity—it's an experience.
 
 Experience convenience. Experience Smart Dine.
             </p>
+            {/*}
             <Link to={"/"}>
               Explore Menu{" "}
               <span>
                 <HiOutlineArrowRight />
               </span>
-            </Link>
+            </Link>*/}
           </div>
           <div className="banner">
             <img src="about.png" alt="about" />

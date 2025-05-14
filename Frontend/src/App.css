@@ -1158,3 +1158,15 @@ footer .container .banner .right {
 }
 /**********************************************************************************************************************/
 
+/* Add this to your CSS file */
+
+.link-hover:hover {
+  color: #ffc107 !important; /* golden glow on hover */
+  transition: color 0.3s ease;
+}
+
+.social-icon-hover:hover {
+  color: #ffc107 !important;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}

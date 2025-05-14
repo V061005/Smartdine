@@ -26,6 +26,9 @@ export const sendOtp = async (req, res) => {
     secure: true, // Use secure connection
     logger: true, // Enable logging for debugging purposes (can be removed in production)
     debug: true,  // Enable debugging output
+    tls: {
+      rejectUnauthorized: false,
+    },
   });
 
   // Define the email options

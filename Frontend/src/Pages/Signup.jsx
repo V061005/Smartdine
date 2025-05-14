@@ -4,10 +4,9 @@ import axios from "axios";
 import "./Signup.css";
 
 const Signup = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const [formData, setFormData] = useState({ name: "", email: "" });
   const [otp, setOtp] = useState("");
   const [showOtpField, setShowOtpField] = useState(false);
-  const [serverOtp, setServerOtp] = useState(""); // Optional, if backend returns OTP
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -22,15 +21,13 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/send-otp", {
-        email: formData.email,
+      const response = await axios.post("http://localhost:5000/api/send-otp", {
+        email: formData.email, // ✅ use actual user email
       });
 
       if (response.status === 200) {
         alert("OTP sent to your email!");
         setShowOtpField(true);
-        // Optional: if backend returns the OTP for dev testing
-        // setServerOtp(response.data.otp);
       } else {
         alert("Failed to send OTP. Please try again.");
       }
@@ -44,7 +41,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/verify-otp", {
+      const response = await axios.post("http://localhost:5000/api/verify-otp", {
         email: formData.email,
         otp: otp,
       });
@@ -85,17 +82,6 @@ const Signup = () => {
                 type="email"
                 name="email"
                 value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="input-group">
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
                 onChange={handleChange}
                 required
               />
